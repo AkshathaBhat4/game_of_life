@@ -1,0 +1,33 @@
+h1.text-center Game Of Life
+hr
+
+#game_of_life
+  .row
+    .col-lg-9
+      #gof_graph.pull-right
+      = hidden_field_tag 'world_id'
+
+    .col-lg-3.nopadding
+      .pull-left.patterns_block
+        .patterns.text-center
+          - @patterns.each do |pattern|
+            .col-lg-6
+              = link_to 'javascript:void(0)', class: 'pattern', data: {pattern_id: pattern.id} do
+                b= pattern.name.titleize
+                br
+                = image_tag "#{pattern.name}.gif", class: 'image_block'
+  .row
+    .col-lg-12.navigation_block
+      .row
+        .col-lg-12
+          .text-center
+            .form-inline
+              .form-group
+                b Generations :
+                = text_field_tag 'generation_count', 0, {disabled: true, class: 'form-control'}
+      .row
+        .col-lg-12
+          .buttons.text-center
+            = link_to 'Start', 'javascript:void(0)', id: 'start_game', class: 'btn btn-primary btn-lg'
+            = link_to 'Next Generation', 'javascript:void(0)', id: 'next_generation', class: 'btn btn-primary btn-lg'
+            = link_to 'Stop', 'javascript:void(0)', id: 'end_game', class: 'btn btn-primary btn-lg'

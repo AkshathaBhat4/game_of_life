@@ -1,3 +1,26 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  background: rgba(230, 184, 103, 0.41);
+}
+.nopadding {
+  padding: 0px;
+}
+.patterns_block {
+  margin-right: 30px;
+  background: papayawhip;
+  padding: 30px;
+  .image_block {
+    width: 60px;
+    margin-bottom: 25px;
+    height: 60px;
+  }
+}
+
+.navigation_block {
+  background: papayawhip;
+  padding: 30px;
+  .buttons {
+    a {
+      margin: 10px;
+    }
+  }
+}
